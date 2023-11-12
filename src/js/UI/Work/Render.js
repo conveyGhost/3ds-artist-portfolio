@@ -18,38 +18,13 @@ export default class WorkRender {
         this.tags = tags
 
         this.renderItems()
-        /*    this.renderItems_v() */
     }
-
-    /* renderItems_v() {
-        this.items_v.forEach((item) => {
-            this.domElements.renderContainer.insertAdjacentHTML('beforeend', `
-            <div id="work-item-${item.id}" class="work-item-container column">
-                <video src="${item.image}" controls height="auto" width="100%"/>
-                <span>okok</span>
-                <div class="work-item-content-container">
-                    <h3>${item.name}</h3>
-                    <div class="work-item-tag-container row">
-                        ${this.renderTags(item.tags)}
-                    </div>
-                    <span>${item.description}</span>
-                </div>
-                <div class="work-item-button-container row">
-                    ${this.renderButtons(item)}
-                </div>
-                ${item.bannerIcons ? this.renderBanner(item) : ''}
-            </div>
-            `)
-
-            this.addEventListenersToCard(item)
-        })
-    } */
 
     renderItems() {
         this.items.forEach((item) => {
             this.domElements.renderContainer.insertAdjacentHTML('beforeend', `
             <div id="work-item-${item.id}" class="work-item-container column">
-            ${item.image ? `<img src="${item.image}" alt="${item.alt}" height="auto" width="100%"/>` : `<video src="${item.video}" controls height="auto" width="100%"/>`}
+            ${item.image ? `<img src="${item.image}" alt="${item.alt}" height="auto" width="100%"/>` : `<video src="${item.video}" controls height="auto" width="100%"></video>`}
                 <div class="work-item-content-container">
                     <h3>${item.name}</h3>
                     <div class="work-item-tag-container row">
